@@ -46,7 +46,7 @@
     <outline type="rss" xmlUrl="http://liradopovo.blogspot.com/feeds/posts/default"/>
 
     <outline type="rss" xmlUrl="http://calmintrees.blogspot.com/feeds/posts/default"/>
-    <outline type="rss" xmlUrl="http://www.globalgroovers.com/feed"/>
+    
     <outline type="rss" xmlUrl="http://swingaconga.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://allensarchiveofearlyoldcountrymusic.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://primitiveequations.blogspot.com/feeds/posts/default"/>
@@ -238,5 +238,6 @@
     <outline type="rss" xmlUrl="https://cortez.wordpress.com/feed/"/>
 
     <outline type="rss" xmlUrl="http://www.awesometapes.com/feed/"/>
+    <outline type="rss" xmlUrl="http://www.globalgroovers.com/feed"/>
   </body>
 </opml>
