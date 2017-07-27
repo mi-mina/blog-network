@@ -13,3 +13,14 @@ git add .
 git commit -m "write your message"
 git push origin master
 ```
+
+# host sites used by blogs
+```
+www.adrive.com
+www.zippyshare.com
+https://yadi.sk
+https://drive.google.com
+https://dfiles.eu/
+https://mega.nz
+
+
