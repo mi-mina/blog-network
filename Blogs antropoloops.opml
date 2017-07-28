@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.1">
-  <head>
-    <title>The Old Reader</title>
-    <dateCreated>Wed, 19 Jul 2017 15:50:19 GMT</dateCreated>
-    <dateModified>Wed, 19 Jul 2017 15:50:19 GMT</dateModified>
-    <ownerName>antropoloops</ownerName>
-    <ownerEmail>rubenxito@gmail.com</ownerEmail>
-  </head>
   <body>
     <outline type="rss" xmlUrl="http://atertiarysource.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://popoknet.blogspot.com/feeds/posts/default"/>
@@ -141,14 +134,11 @@
     <outline type="rss" xmlUrl="http://scratchyattic.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://musicasdecolombia.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://lesmainsnoires.blogspot.com/feeds/posts/default"/>
-    
-    
     <outline type="rss" xmlUrl="http://trem-de-minas.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://progresyvusisrokas.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://dancefromspace.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://porloscamposdemicuba.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://spilledtransferstation.blogspot.com/feeds/posts/default"/>
-    <outline type="rss" xmlUrl="https://originalpress365.wordpress.com/feed/"/>
     <outline type="rss" xmlUrl="http://kriteriaradial.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://makedonske-pesme-ora-etno.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://muzikanarodna.blogspot.com/feeds/posts/default"/>
@@ -182,16 +172,13 @@
     <outline type="rss" xmlUrl="http://folkyourself.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://lauvaylaparra.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://afrosynth.blogspot.com/feeds/posts/default"/>
-    <outline type="rss" xmlUrl="https://soulsafari.wordpress.com/feed/"/>
     <outline type="rss" xmlUrl="http://jellyfishsamich.blogspot.com/feeds/posts/default"/>
-    <outline type="rss" xmlUrl="http://blogs.bl.uk/endangeredarchives/atom.xml"/>
     <outline type="rss" xmlUrl="http://dollarbinjamsonline.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://resinhits.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://beingsubstance.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://africanmongers.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://wayneandwax.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://kadaotonkao.blogspot.com/feeds/posts/default"/>
-    <outline type="rss" xmlUrl="http://sahelsounds.com/feed/"/>
     <outline type="rss" xmlUrl="http://kasetcilik.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://lebanditrode.blogspot.com/feeds/posts/default"/>
     <outline type="rss" xmlUrl="http://periecosbrecho.blogspot.com/feeds/posts/default"/>
@@ -209,6 +196,8 @@
     <outline type="rss" xmlUrl="http://oldweirdamerica.wordpress.com/feed/"/>
     <outline type="rss" xmlUrl="http://mademoisellemontana.wordpress.com/feed/"/>
     <outline type="rss" xmlUrl="http://radiodiffusion.wordpress.com/feed/"/>
+    <outline type="rss" xmlUrl="https://originalpress365.wordpress.com/feed/"/>
+    <outline type="rss" xmlUrl="https://soulsafari.wordpress.com/feed/"/>
 
     <outline type="rss" xmlUrl="http://www.awesometapes.com/feed/"/>
     <outline type="rss" xmlUrl="http://www.globalgroovers.com/feed"/>
@@ -224,5 +213,6 @@
     <outline type="rss" xmlUrl="http://excavatedshellac.com/feed/"/>
     <outline type="rss" xmlUrl="http://aseam.info/?feed=rss2"/>
     <outline type="rss" xmlUrl="http://www.ofrevo.com/feeds/posts/default"/>
+    <outline type="rss" xmlUrl="http://sahelsounds.com/feed/"/>
   </body>
 </opml>
