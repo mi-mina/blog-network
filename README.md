@@ -15,12 +15,25 @@ git push origin master
 ```
 
 # host sites used by blogs
+
+- www.adrive.com
+- www.zippyshare.com
+- https://yadi.sk
+- https://drive.google.com
+- https://dfiles.eu/
+- https://mega.nz
+
+
+# Usage
 ```
-www.adrive.com
-www.zippyshare.com
-https://yadi.sk
-https://drive.google.com
-https://dfiles.eu/
-https://mega.nz
-
-
+lein deps
+```
+To download dependencies
+```
+lein  repl
+```
+To init the repl
+```
+(load "blog_network/scape1")
+(in-ns 'blog_network.scape1)
+```

@@ -1,0 +1,139 @@
+(load "tutorial/scrape1")
+(load "blog_network/scrape1")
+(in-ns 'tutorial.scrape1)
+*base-url*
+(hn-headlines)
+q
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1')
+*base-url*
+(load 'blog_network/scrape1')
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+*base-url*
+(print-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(print-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(print-links)
+*base-url*
+(print-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(print-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(print-links)
+(hn-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(hn-links)
+(println (hn-links))
+(count (hn-links))
+(load "blog_network")
+(load "blog_network/scrape1")
+(in-ns 'blog_network/scrape1)
+(hn-links)
+*base-url*
+(in-ns 'blog_network.scrape1)
+(hn-links)
+(html/select (fetch-url *base-url*) [:div.LinkList :li :a])
+(with-open [reader (io/reader "data/blogs_blogspot.csv")]
+  (doall
+    (csv/read-csv reader)))
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(with-open [reader (io/reader "data/blogs_blogspot.csv")]
+  (doall
+    (csv/read-csv reader)))
+(with-open [reader (io/reader "data/blogs_blogspot.csv")]
+    (csv/read-csv reader))
+bloglist
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+bloglist
+blogvector
+bloglist
+(rest bloglist)
+(concat (rest bloglist))
+(apply concat (rest bloglist))
+(vec (apply concat (rest bloglist)))
+(map #(replace % "http://" "") (vec (apply concat (rest bloglist))))
+(map #(clojure.string/replace % "http://" "") (vec (apply concat (rest bloglist))))
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blogs-vector
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blogs-list
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+*base-url*
+(hn-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+*base-url*
+(hn-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(hn-links)
+*base-url*
+(load "blog_network/scrape1")
+(hn-links)
+(in-ns 'blog_network.scrape1)
+(hn-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(hn-links)
+(load "blog_network/scrape1")
+(hn-links)
+(in-ns 'blog_network.scrape1)
+(hn-links)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list
+(get-BlogList)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list
+blog-list-filtered
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list
+blog-list-filtered
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list-filtered
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list-blogspot
+link-list
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+link-list-blogspot
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+list-blogspot
+(def listaA '("alpha", "beta", "gamma"))
+listaA
+(def listaB '("uno" "dos" "beta" "gamma"))
+listaB
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+list-blogspot-filtered
+list-blogspot
+blogs-list
+(json/read-str "{\"a\":1,\"b\":2}")
+(json/write-str {:a 1 :b 2})
+(with-open [writer (clojure.java.io/writer "foo.json")]
+  (json/write [{:foo "bar"}] writer))
+initial-blog-list
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(vec(map #({:name %, :group 1}) initial-blogs-list))
+(map #({:name %, :group 1}) initial-blogs-list)
