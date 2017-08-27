@@ -137,3 +137,98 @@ initial-blog-list
 (in-ns 'blog_network.scrape1)
 (vec(map #({:name %, :group 1}) initial-blogs-list))
 (map #({:name %, :group 1}) initial-blogs-list)
+initial-blog-list
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(get-BlogList)
+(blog-list-blogspot)
+blog-list-blogspot
+list-blogspot
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+list-blogspot
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list-blogspot-domains
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list-blogspot-domains
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blog-list-blogspot-domains
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+initial-blogspots-domains
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blogspot-domains-filtered
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+nodes-array
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+initial-blogspot-domains
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+blogspot-domains-filtered
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(refresh)
+blogspot-domains-filtered
+(refresh)
+blogspot-domains-filtered
+(refresh)
+(get-links-array *base-url*)
+(refresh)
+(get-links-array *base-url*)
+(refresh)
+(get-links-array *base-url*)
+(refresh)
+(get-links-array *base-url*)
+(refresh)
+links-arrays
+(get-links-array *base-url*)
+(refresh)
+(get-links-array *base-url*)
+(refresh)
+(get-links-array *base-url*)
+(refresh)
+(get-links-array *base-url*)
+(get-links-array-from-url *base-url*)
+(refresh)
+links-arrays
+initial-blogspot-urls
+(refresh)
+links-arrays
+(refresh)
+links-arrays
+(refresh)
+links-arrays
+(refresh)
+links-arrays
+(refresh)
+links-arrays
+(refresh)
+links-arrays
+(refresh)
+links-array
+(refresh)
+links-array
+(refresh)
+links-array
+(refresh)
+links-array
+(refresh)
+links-array
+(refresh)
+links-array
+(refresh)
+links-array-size
+links-array
+(refresh)
+(calculate-target-size)
+nodes-array-size
+nodes-array
+(refresh)
+nodes-array-size
+nodes-array
