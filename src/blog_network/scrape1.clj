@@ -51,7 +51,7 @@
 
 ;; ******************* data *******************
 (def initial-blogspot-urls
-  (->> (read-from-csv "data/blogs_blogspot2.csv")
+  (->> (read-from-csv "data/blogs_blogspot.csv")
     (rest)
     (apply concat)
     (map #(clojure.string/replace % "/feeds/posts/default" ""))))
@@ -61,9 +61,7 @@
 ;; La lista inicial de nodos es la lista de la que partimos (:group 1), ya que en principio
 ;; solo vamos a ver la relación entre ellos. En una segunda fase tendremos que
 ;; añadir a esa lista inicial los blogs que siguen cada blog de la lista inicial (:group 2)
-(def nodes-array (get-nodes initial-blogspot-domains))
-
-;;(def ^:dynamic *base-url* (nth initial-blogspot-urls 12))
+(def initial-nodes-array (get-nodes initial-blogspot-domains))
 
 (defn get-links-array-from-url [url]
   (let [blog-list-blogspot-domains (get-blog-list-blogspot-domains url)
@@ -71,7 +69,7 @@
         blogspot-domains (concat blog-list-blogspot-domains link-list-blogspot-domains)
         blogspot-domains-filtered (filter (fn [s] (some #(= % s) initial-blogspot-domains)) blogspot-domains)]
          (map
-          #(hash-map :source (get-domain url) :target % :value 1)
+          #(when (not= (get-domain url) %) (hash-map :source (get-domain url) :target % :value 1))
           blogspot-domains-filtered)))
 
 (defn get-links-array [urls]
@@ -79,15 +77,12 @@
 
 (def links-array (get-links-array initial-blogspot-urls))
 
-(defn calculate-target-size []
-  (doseq [domain nodes-array]
-    (let [objects-with-domain-as-target (filter #(= (:target %) (:id domain)) links-array)
+(def nodes-array
+  (vec (map (fn [node]
+    (let [objects-with-domain-as-target (filter #(= (:target %) (:id node)) links-array)
           domain-size (count objects-with-domain-as-target)]
-          (print domain)
-          (assoc domain :size domain-size)
-          nodes-array)))
-
-(def nodes-array-size (calculate-target-size))
+          (assoc node :followers objects-with-domain-as-target)
+          )) initial-nodes-array)))
 
 
 

@@ -232,3 +232,15 @@ nodes-array
 (refresh)
 nodes-array-size
 nodes-array
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+nodes-array
+initial-blogspot-domains
+(refresh)
+target-size
+(refresh)
+universe
+(refresh)
+links-array
+nodes-array-with-size
+(refresh)
