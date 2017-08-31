@@ -244,3 +244,25 @@ universe
 links-array
 nodes-array-with-size
 (refresh)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+(refresh)
+initial-wordpress-urls
+(refresh)
+initial-wordpress-domains
+(refresh)
+initial-nodes-array
+(refresh)
+initial-nodes-array
+(refresh)
+universe
+(refresh)
+(load "blog_network/scrape1")
+(in-ns 'blog_network.scrape1)
+initial-nodes-array
+initial-nodes-array-wordpress
+nodes-array
+(refresh)
+nodes-array
+links-array
+(refresh)

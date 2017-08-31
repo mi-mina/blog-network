@@ -6,10 +6,10 @@ var height = +svg.attr('height')
 // var color = d3.scaleOrdinal(d3.schemeCategory20)
 
 var simulation = d3.forceSimulation()
-    .force('link', d3.forceLink().id(function (d) { return d.id }).distance(70))
-    .force('charge', d3.forceManyBody().distanceMax(200).strength(-75))
+    .force('link', d3.forceLink().id(function (d) { return d.id }).distance(50))
+    .force('charge', d3.forceManyBody().distanceMax(100).strength(-75))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('forceX', d3.forceX(width / 2).strength(0.01))
+    .force('forceX', d3.forceX(width / 2).strength(0.02))
     .force('forceY', d3.forceY(height / 2).strength(0.04))
     .force('collision', d3.forceCollide(function (d) {
       return +d.followers.length * 2 + 10
@@ -34,7 +34,10 @@ d3.json('universe.json', function (error, graph) {
     .enter().append('circle')
       .attr('id', d => d.id)
       .attr('r', d => +d.followers.length / 2 + 3)
-      .attr('fill', '#fffed1')
+      .attr('fill', d => {
+        if (d.platform === 'blogspot') return '#fffed1'
+        else return '#ffa16b'
+      })
       .call(d3.drag()
           .on('start', dragstarted)
           .on('drag', dragged)
@@ -48,10 +51,11 @@ d3.json('universe.json', function (error, graph) {
       .attr('fill', 'yellow')
       .style('stroke-opacity', 0.6)
       .style('stroke', '#fffc7a')
+      .attr('cursor', 'pointer')
     d3.selectAll('.' + d.id)
       .style('stroke', 'yellow')
       .style('stroke-width', 1.5)
-    d.followers.map(blog => blog.source).forEach(id => {
+    d.followers.forEach(id => {
       d3.select('#' + id)
         .style('stroke-opacity', 0.6)
         .style('stroke', '#fffc7a')
@@ -65,12 +69,13 @@ d3.json('universe.json', function (error, graph) {
     d3.selectAll('.' + d.id)
       .style('stroke', '#999')
       .style('stroke-width', 1)
-    d.followers.map(blog => blog.source).forEach(id => {
+    d.followers.forEach(id => {
       d3.select('#' + id)
         .style('stroke-opacity', 0.2)
         .style('stroke', '#fff')
     })
   })
+  // node.on('click', d => window.open('http://' + d.id + '.blogspot.com', '_blank'))
 
   simulation
       .nodes(graph.nodes)
