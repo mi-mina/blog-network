@@ -60,6 +60,7 @@ feMerge.append('feMergeNode')
 //   .attr('result','coloredBlur');
 
 var simulation = d3.forceSimulation()
+    .alphaDecay(0.05)
     .force('link', d3.forceLink().id(function (d) { return d.id }).distance(50))
     .force('charge', d3.forceManyBody().distanceMax(100).strength(-75))
     .force('center', d3.forceCenter(width / 2, height / 2))
@@ -73,16 +74,18 @@ d3.json('universe.json', function (error, graph) {
   if (error) throw error
   console.log('graph', graph)
 
-  var link = svg.append('g')
-      .attr('class', 'links')
+  var linksGroup = svg.append('g').attr('class', 'links')
+  var nodesGroup = svg.append('g').attr('class', 'nodes')
+  var tooltipGroup = svg.append('g').attr('class', 'tooltip-wrapper')
+
+  var link = linksGroup
     .selectAll('line')
     .data(graph.links)
     .enter().append('line')
       .attr('class', d => d.target + ' link')
-      .attr('stroke-width', 1) // d => Math.sqrt(d.value)
+      .attr('stroke-width', 1)
 
-  var node = svg.append('g')
-      .attr('class', 'nodes')
+  var node = nodesGroup
     .selectAll('circle')
     .data(graph.nodes)
     .enter().append('circle')
@@ -99,10 +102,24 @@ d3.json('universe.json', function (error, graph) {
           .on('drag', dragged)
           .on('end', dragended))
 
-  node.append('title')
-      .text(d => d.id)
+  tooltipGroup
+    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')')
+    .style('opacity', 0)
+
+  var tooltipTitle = tooltipGroup.append('text')
+    .attr('class', 'tooltip-title')
+    .attr('y', 15)
+    .text('title')
 
   node.on('mouseover', (d, i, nodes) => {
+    tooltipTitle.text(d.id)
+    let radio = +d.followers.length / 2 + 3
+
+    tooltipGroup
+      .attr('transform', 'translate(' + d.x + ',' + (d.y - (radio + 25)) + ')')
+    tooltipGroup
+     .style('opacity', 1)
+
     // Change cursor
     d3.select(nodes[i])
       .attr('cursor', 'pointer')
@@ -124,11 +141,12 @@ d3.json('universe.json', function (error, graph) {
 
     // Select all links that are not followers and stroke them darker
     d3.selectAll('line.link:not(.' + d.id + ')')
-      // .style('stroke', linkDarkerC)
       .style('stroke-opacity', linkDarkerOpacity)
       .style('stroke-width', 1)
   })
   node.on('mouseout', (d, i, nodes) => {
+    tooltipGroup
+     .style('opacity', 0)
     d3.selectAll('line.link')
       .style('stroke', linkNormalC)
       .style('stroke-opacity', linkNormalOpacity)
