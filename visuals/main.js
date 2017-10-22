@@ -1,11 +1,6 @@
 /* global d3 */
-var svg = d3.select('svg')
-var width = +svg.attr('width')
-var height = +svg.attr('height')
 
-// var color = d3.scaleOrdinal(d3.schemeCategory20)
 let linkNormalC = '#5e5e5e'
-// let linkDarkerC = '#444'
 let linkNormalOpacity = 0.6
 let linkDarkerOpacity = 0.3
 let linkNormalWidth = 1
@@ -19,9 +14,62 @@ let bsDarkerNodeC = '#787753'
 let wpNormalNodeC = '#FFBE32'
 let wpDarkerNodeC = '#89600F'
 
-// /////////////////// Glow filter ///////////////////////////
+var container = d3.select('#network')
+var width = 960
+var height = 800
+
+var svg = container.append('svg')
+  .attr('id', 'chart')
+  .attr('preserveAspectRatio', 'xMinYMin meet')
+  .attr('viewBox', '0 0 960 800')
+
+// ----------------------------------------
+// Legend
+// ----------------------------------------
+
+var legendSvg = d3.select('#legend').append('svg')
+  .attr('id', 'legendSvg')
+  .attr('preserveAspectRatio', 'xMinYMin meet')
+  .attr('viewBox', '0 0 312 50')
+
+var legendWidth = 312
+var legendHeight = 50
+
+legendSvg.append('circle')
+  .attr('cx', legendWidth / 3)
+  .attr('cy', legendHeight / 4)
+  .attr('r', 5)
+  .style('fill', bsNormalNodeC)
+  .style('filter', 'url(#glow)')
+
+legendSvg.append('text')
+  .attr('x', legendWidth / 3)
+  .attr('y', legendHeight / 4 + 20)
+  .attr('dy', '.35em')
+  .style('fill', '#ccc')
+  .style('text-anchor', 'middle')
+  .text('Blogspot')
+
+legendSvg.append('circle')
+  .attr('cx', legendWidth * 2 / 3)
+  .attr('cy', legendHeight / 4)
+  .attr('r', 5)
+  .style('fill', wpNormalNodeC)
+  .style('filter', 'url(#glow)')
+
+legendSvg.append('text')
+  .attr('x', legendWidth * 2 / 3)
+  .attr('y', legendHeight / 4 + 20)
+  .attr('dy', '.35em')
+  .style('fill', '#ccc')
+  .style('text-anchor', 'middle')
+  .text('Wordpress')
+
+// ----------------------------------------
+// Glow filter
 // Following Nadieh Bremer's tutorial:
 // https://www.visualcinnamon.com/2016/06/glow-filter-d3-visualization.html
+// ----------------------------------------
 
 // defs container
 var defs = svg.append('defs')
@@ -44,20 +92,6 @@ feMerge.append('feMergeNode')
   .attr('in', 'coloredBlur')
 feMerge.append('feMergeNode')
   .attr('in', 'SourceGraphic')
-//
-//
-// //Blur for the royal leaders
-// var filterIntense = defs.append('filter')
-//   .attr('width', '300%')
-//   .attr('x', '-100%')
-//   .attr('height', '300%')
-//   .attr('y', '-100%')
-//   .attr('id','glow-intense')
-//
-// filterIntense.append('feGaussianBlur')
-//   .attr('class', 'blur')
-//   .attr('stdDeviation','3')
-//   .attr('result','coloredBlur');
 
 var simulation = d3.forceSimulation()
     .alphaDecay(0.05)

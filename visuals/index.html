@@ -1,42 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Force-directed graph</title>
-    <style>
-    body {
-      background-color: black;
-    }
-
-    .links line {
-      stroke: #5e5e5e;
-      stroke-opacity: 0.6;
-    }
-
-    .nodes circle {
-      /*stroke: #fff;
-      stroke-width: 10px;
-      stroke-opacity: 0.2;*/
-    }
-
-    .tooltip-wrapper {
-    	font-size: 16px;
-    	pointer-events: none;
-    	text-anchor: middle;
-    	text-shadow: 0 1px 4px #101420, 1px 0 4px #101420, -1px 0 4px #101420, 0 -1px 4px #101420
-    }
-
-    .tooltip-title {
-    	/*font-size: 12px;*/
-    	fill: #fff;
-    }
-
-    </style>
+    <meta name="author" content="Esperanza Moreno">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fuentes musicales. Antropoloops</title>
   </head>
   <body>
-    <svg width="1200" height="700"></svg>
+    <div class="group">
+      <div id="aside" class="left">
+        <div id="title">
+          <a href="http://www.antropoloops.com"><img width="100%" src="logo.jpg" alt="logo"></a>
+          <h2>Fuentes musicales</h2>
+        </div>
+        <!-- <p>ES / EN</p> -->
+        <p><a href="http://www.antropoloops.com">Antropoloops</a> no sería posible sin el trabajo de muchas personas
+          (coleccionistas de vinilos, amantes de la música...) que comparten
+          discos antiguos en sus blogs. Gran parte de las fuentes musicales
+          que usamos en nuestras remezclas provienen de ahí. En los últimos años
+          hemos ido descubriendo y disfrutando de la riqueza y diversidad de la
+          música a través de estos blogs, y en la actualidad seguimos via RSS
+          en torno a 200 blogs.</p>
+        <p>Nos hemos imaginado siempre todos estos blogs como una especie de
+          archivo distribuido, y queríamos saber qué aspecto podría tener.
+          La gráfica muestra los cerca de 200 blogs que seguimos y las relaciones
+          entre ellos. Si pasas el cursor por encima de un nodo puedes ver los
+          blogs que le siguen.</p>
+        <p>A diferencia de la idea ordenada y centralizada de archivo asociada a
+          una institución cultural, esta visualización muestra una noción de
+          archivo distribuido y descentralizado. El acceso a una enorme riqueza
+          musical (tradicional y del siglo XX)
+          de distintas partes del mundo, se produce gracias a esta red, a este
+          ecosistema de personas amantes de la música.</p>
+        <p>El hecho de que muchos blogs desaparecen o cesan su actividad, o de
+          que la música deja de estar accesible en los servidores, dota a este
+          archivo distribuido de un caracter frágil, temporal, y vivo. Esto
+          que vemos es solo una imagen temporal.</p>
+        <p>Llevabamos tiempo queriendo compartir todas esta fuentes
+          fundamentales para nuestro proyecto, y pensamos que esta es una
+          buena manera. Puedes acceder a los blogs haciendo click en los nodos.</p>
+        <div id="legend"></div>
+      </div>
+      <div id="network" class="right"></div>
+    </div>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
