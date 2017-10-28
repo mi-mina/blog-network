@@ -4,7 +4,7 @@
 
 We've always imagined all these blogs as a sort of distributed archive, and we wanted to know how it might look like. The graph shows the blogs we follow and the relationships between them.
 
-# Usage
+### Usage
 To download dependencies
 ```
 lein deps
