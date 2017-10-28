@@ -74,7 +74,6 @@ legendSvg.append('text')
 // defs container
 var defs = svg.append('defs')
 
-// //Filter for the outside glow
 var filter = defs.append('filter')
   .attr('width', '300%')
   .attr('x', '-100%')
