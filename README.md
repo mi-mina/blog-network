@@ -4,25 +4,16 @@
 
 We've always imagined all these blogs as a sort of distributed archive, and we wanted to know how it might look like. The graph shows the blogs we follow and the relationships between them.
 
-# host sites used by blogs
-
-- www.adrive.com
-- www.zippyshare.com
-- https://yadi.sk
-- https://drive.google.com
-- https://dfiles.eu/
-- https://mega.nz
-
-
 # Usage
+To download dependencies
 ```
 lein deps
 ```
-To download dependencies
+To init the repl
 ```
 lein  repl
 ```
-To init the repl
+
 ```
 (load "blog_network/scape1")
 (in-ns 'blog_network.scape1)
