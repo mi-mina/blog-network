@@ -1,18 +1,8 @@
-Visualizing Antropoloops blog ecosystem
+# Visualizing Antropoloops blog ecosystem
 
-# To pull a commit
+[Antropoloops](http:/antropoloops.com) would not be possible without the work of many people (vinyl collectors, music lovers...) who share old albums in their blogs. Most of the musical sources we use in our remixes come from there. In recent years we have been discovering and enjoying the richness and diversity of music through these blogs, and now we follow via RSS around 200 blogs.
 
-```
-git fetch
-git pull origin master
-```
-# To push a commit
-
-```
-git add .
-git commit -m "write your message"
-git push origin master
-```
+We've always imagined all these blogs as a sort of distributed archive, and we wanted to know how it might look like. The graph shows the blogs we follow and the relationships between them.
 
 # host sites used by blogs
 
